@@ -1,0 +1,23 @@
+{
+  "name": "just vegTaza",
+  "short_name": "vegTaza",
+  "start_url": "index.html",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/cCX5nMv/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+      },
+    {
+      "src": "https://i.ibb.co/ZxWrrdp/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+      }
+    ],
+    "theme_color":"#000000",
+    "background_color":"#FFFFFF",
+    "display":"standalone",
+    "orientation":"portrait"
+}
