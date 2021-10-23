@@ -1245,6 +1245,7 @@ home()
 cart()
 log()
 bottomNav()
+navigator.geolocation.getCurrentPosition(() => {})
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -1252,4 +1253,3 @@ if ('serviceWorker' in navigator) {
   })
 }
 
-navigator.geolocation.getCurrentPosition(() => {})
