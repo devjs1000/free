@@ -1,19 +1,16 @@
-var cacheName='vtApk1'
+var cacheName='vtApk69'
 
 //calling install event
 self.addEventListener('install',e=>{
-  console.log('serviceWorker: installed')
 })
 
 //calling activate event
 self.addEventListener('activate',e=>{
-  console.log('serviceWorker: activated')
   e.waitUntil(
     caches.keys().then(cacheNames=>{
       return Promise.all(
       cacheNames.map(cache=>{
         if(cache!==cacheName){
-          console.log('serviceWorker: clearing old cache')
           return caches.delete(cache)
         }
       })
@@ -24,7 +21,6 @@ self.addEventListener('activate',e=>{
 
 //calling fetch event
 self.addEventListener('fetch',e=>{
-  console.log('serviceWorker: fetching')
   
   e.respondWith(fetch(e.request).then(res=>{
     const resClone=res.clone()
