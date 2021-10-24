@@ -24,6 +24,14 @@ function stater() {
 }
 stater()
 
+async function updateAdmin(data,func){
+  const ref = doc(db, 'admin', 'list');
+    await updateDoc(ref, {
+    'email': arrayUnion(data)
+    });
+    func()
+}
+
 function registerFn(email, password, name, phone) {
   createUserWithEmailAndPassword(auth, email.value, password.value).then((cred) => {
     updateProfile(auth.currentUser, {
@@ -39,11 +47,16 @@ function registerFn(email, password, name, phone) {
       'address': '',
       'location': ''
     });
-    setDoc(doc(db, "admin", cred.user.email), {
-      'id': cred.user.uid
-    }).then(() => {
-      window.location.reload()
-    })
+let admindd={
+email:cred.user.email,
+id:cred.user.id,
+name:name.value, 
+phone:phone.value
+}
+    updateAdmin(admindd,()=>{
+window.location.reload()
+})
+
   })
 }
 
